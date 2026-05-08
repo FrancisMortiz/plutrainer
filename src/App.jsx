@@ -86,6 +86,7 @@ export default function KassentrainerApp() {
   const [alleErgebnisse, setAlleErgebnisse] = useState(() => ladeSpeicher("kassenTrainerStatistik", []))
   const [startzeit, setStartzeit] = useState(null)
   const [dunkelmodus, setDunkelmodus] = useState(() => ladeSpeicher("kassenTrainerDunkelmodus", true))
+  const [suchbegriff, setSuchbegriff] = useState("")
 
   const aktuelleFrage = fragen[index]
 
@@ -191,7 +192,55 @@ export default function KassentrainerApp() {
     return { gesamt, richtigGesamt, falschGesamt, quote, problemArtikel }
   }
 
-  function StatistikBox() {
+  
+  function Artikelliste() {
+    const gefiltert = ARTIKEL.filter((artikel) => {
+      const text = `${artikel.name} ${artikel.nummer} ${artikel.kategorie}`.toLowerCase()
+      return text.includes(suchbegriff.toLowerCase())
+    })
+
+    return (
+      <div className={`mt-6 rounded-3xl p-4 ${farben.flaeche2}`}>
+        <div className="flex items-center justify-between mb-4 gap-3">
+          <h3 className="font-bold text-xl">Artikelliste</h3>
+          <span className={`text-sm ${farben.textSchwach}`}>{gefiltert.length} Artikel</span>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Artikel suchen..."
+          value={suchbegriff}
+          onChange={(e) => setSuchbegriff(e.target.value)}
+          className={`w-full border rounded-2xl p-4 mb-4 ${farben.feld}`}
+        />
+
+        <div className="space-y-2 max-h-96 overflow-y-auto pr-1">
+          {gefiltert.map((artikel) => (
+            <div
+              key={`${artikel.kategorie}-${artikel.name}`}
+              className={`rounded-2xl p-4 flex items-center justify-between gap-3 ${farben.flaeche}`}
+            >
+              <div>
+                <p className="font-semibold">
+                  {artikel.emoji} {artikel.name}
+                </p>
+                <p className={`text-sm ${farben.textSchwach}`}>
+                  {artikel.kategorie}
+                </p>
+              </div>
+
+              <div className="text-2xl font-bold tracking-wider">
+                {artikel.nummer}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+
+function StatistikBox() {
     const stats = statistik()
 
     return (
@@ -292,6 +341,7 @@ export default function KassentrainerApp() {
         </div>
 
         <StatistikBox />
+        <Artikelliste />
       </Rahmen>
     )
   }
