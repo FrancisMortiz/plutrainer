@@ -1,6 +1,43 @@
 import { useEffect, useMemo, useState } from "react"
 
 const ARTIKEL = [
+  { kategorie: "Obst/Gemüse", name: "Ananas", nummer: "59", emoji: "🍍" },
+  { kategorie: "Obst/Gemüse", name: "Apfel grün", nummer: "15", emoji: "🍏" },
+  { kategorie: "Obst/Gemüse", name: "Pink Lady", nummer: "16", emoji: "🍎" },
+  { kategorie: "Obst/Gemüse", name: "Apfel rot", nummer: "47", emoji: "🍎" },
+  { kategorie: "Obst/Gemüse", name: "Aubergine", nummer: "90", emoji: "🍆" },
+  { kategorie: "Obst/Gemüse", name: "Avocado", nummer: "621", emoji: "🥑" },
+  { kategorie: "Obst/Gemüse", name: "Baby Melone Bio", nummer: "19", emoji: "🍈" },
+  { kategorie: "Obst/Gemüse", name: "Banane", nummer: "55", emoji: "🍌" },
+  { kategorie: "Obst/Gemüse", name: "Blumenkohl", nummer: "200", emoji: "🥦" },
+  { kategorie: "Obst/Gemüse", name: "Cantaloupmelone", nummer: "21", emoji: "🍈" },
+  { kategorie: "Obst/Gemüse", name: "Chinakohl", nummer: "80", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Cherry Tomaten", nummer: "99", emoji: "🍅" },
+  { kategorie: "Obst/Gemüse", name: "Birnen", nummer: "20", emoji: "🍐" },
+  { kategorie: "Obst/Gemüse", name: "Eisbergsalat", nummer: "101", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Baby Banane", nummer: "13", emoji: "🍌" },
+  { kategorie: "Obst/Gemüse", name: "Fairtrade Banane", nummer: "45", emoji: "🍌" },
+  { kategorie: "Obst/Gemüse", name: "Feigen", nummer: "634", emoji: "🟣" },
+  { kategorie: "Obst/Gemüse", name: "Fenchel", nummer: "83", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Granatapfel", nummer: "622", emoji: "🍎" },
+  { kategorie: "Obst/Gemüse", name: "Gurke", nummer: "310", emoji: "🥒" },
+  { kategorie: "Obst/Gemüse", name: "Honigmelone", nummer: "29", emoji: "🍈" },
+  { kategorie: "Obst/Gemüse", name: "Kiwi", nummer: "624", emoji: "🥝" },
+  { kategorie: "Obst/Gemüse", name: "Kiwi Gold", nummer: "626", emoji: "🥝" },
+  { kategorie: "Obst/Gemüse", name: "Kohlrabi", nummer: "202", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Lauchzwiebeln", nummer: "140", emoji: "🧅" },
+  { kategorie: "Obst/Gemüse", name: "Limette", nummer: "609", emoji: "🍋" },
+  { kategorie: "Obst/Gemüse", name: "Porree", nummer: "222", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Radieschen", nummer: "150", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Rettich", nummer: "160", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Rotkohl", nummer: "86", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Spitzkohl", nummer: "87", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Süßkartoffeln", nummer: "25", emoji: "🍠" },
+  { kategorie: "Obst/Gemüse", name: "Weißkohl", nummer: "84", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Wirsing", nummer: "85", emoji: "🥬" },
+  { kategorie: "Obst/Gemüse", name: "Zucchini", nummer: "93", emoji: "🥒" },
+  { kategorie: "Obst/Gemüse", name: "Zwiebeln", nummer: "95", emoji: "🧅" },
+
   { kategorie: "Backwaren", name: "Apfeltasche", nummer: "572", emoji: "🥧" },
   { kategorie: "Backwaren", name: "Schoko Donut", nummer: "937", emoji: "🍩" },
   { kategorie: "Backwaren", name: "Pinky Donut", nummer: "951", emoji: "🍩" },
@@ -177,13 +214,11 @@ export default function KassentrainerApp() {
     const quote = gesamt ? Math.round((richtigGesamt / gesamt) * 100) : 0
 
     const fehlerZaehler = {}
-    alleErgebnisse
-      .filter((e) => !e.richtig)
-      .forEach((e) => {
-        const key = e.artikel.name
-        fehlerZaehler[key] = fehlerZaehler[key] || { artikel: e.artikel, count: 0 }
-        fehlerZaehler[key].count += 1
-      })
+    alleErgebnisse.filter((e) => !e.richtig).forEach((e) => {
+      const key = e.artikel.name
+      fehlerZaehler[key] = fehlerZaehler[key] || { artikel: e.artikel, count: 0 }
+      fehlerZaehler[key].count += 1
+    })
 
     const problemArtikel = Object.values(fehlerZaehler)
       .sort((a, b) => b.count - a.count)
@@ -192,7 +227,6 @@ export default function KassentrainerApp() {
     return { gesamt, richtigGesamt, falschGesamt, quote, problemArtikel }
   }
 
-  
   function Artikelliste() {
     const gefiltert = ARTIKEL.filter((artikel) => {
       const text = `${artikel.name} ${artikel.nummer} ${artikel.kategorie}`.toLowerCase()
@@ -216,22 +250,13 @@ export default function KassentrainerApp() {
 
         <div className="space-y-2 max-h-96 overflow-y-auto pr-1">
           {gefiltert.map((artikel) => (
-            <div
-              key={`${artikel.kategorie}-${artikel.name}`}
-              className={`rounded-2xl p-4 flex items-center justify-between gap-3 ${farben.flaeche}`}
-            >
+            <div key={`${artikel.kategorie}-${artikel.name}`} className={`rounded-2xl p-4 flex items-center justify-between gap-3 ${farben.flaeche}`}>
               <div>
-                <p className="font-semibold">
-                  {artikel.emoji} {artikel.name}
-                </p>
-                <p className={`text-sm ${farben.textSchwach}`}>
-                  {artikel.kategorie}
-                </p>
+                <p className="font-semibold">{artikel.emoji} {artikel.name}</p>
+                <p className={`text-sm ${farben.textSchwach}`}>{artikel.kategorie}</p>
               </div>
 
-              <div className="text-2xl font-bold tracking-wider">
-                {artikel.nummer}
-              </div>
+              <div className="text-2xl font-bold tracking-wider">{artikel.nummer}</div>
             </div>
           ))}
         </div>
@@ -239,8 +264,7 @@ export default function KassentrainerApp() {
     )
   }
 
-
-function StatistikBox() {
+  function StatistikBox() {
     const stats = statistik()
 
     return (
@@ -315,7 +339,7 @@ function StatistikBox() {
             <label className="font-semibold block mb-2">Kategorie</label>
             <select value={kategorie} onChange={(e) => setKategorie(e.target.value)} className={`w-full border rounded-2xl p-4 text-lg ${farben.feld}`}>
               {kategorien.map((kat) => (
-                <option key={kat} value={kat}>{kat === "Alle" ? "⭐ Alle Kategorien" : `🥐 ${kat}`}</option>
+                <option key={kat} value={kat}>{kat === "Alle" ? "⭐ Alle Kategorien" : `${kat === "Backwaren" ? "🥐" : "🍎"} ${kat}`}</option>
               ))}
             </select>
           </div>
