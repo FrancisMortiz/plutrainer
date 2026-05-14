@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
 const ARTIKEL = [
   { kategorie: "Obst/Gemüse", name: "Ananas", nummer: "59", emoji: "🍍" },
@@ -125,6 +125,7 @@ export default function KassentrainerApp() {
   const [dunkelmodus, setDunkelmodus] = useState(() => ladeSpeicher("kassenTrainerDunkelmodus", true))
   const [suchbegriff, setSuchbegriff] = useState("")
   const [aktiveSuche, setAktiveSuche] = useState("")
+  const suchfeldRef = useRef(null)
 
   const aktuelleFrage = fragen[index]
 
@@ -342,24 +343,36 @@ export default function KassentrainerApp() {
           </div>
 
           <input
+            ref={suchfeldRef}
             type="text"
             placeholder="Artikel suchen..."
-            value={suchbegriff}
-            onChange={(e) => setSuchbegriff(e.target.value)}
+            defaultValue={suchbegriff}
             onKeyDown={(e) => {
-              if (e.key === "Enter") setAktiveSuche(suchbegriff)
+              if (e.key === "Enter") {
+                const wert = e.currentTarget.value
+                setSuchbegriff(wert)
+                setAktiveSuche(wert)
+              }
             }}
             className={`w-full border rounded-2xl p-4 mb-3 ${farben.feld}`}
           />
 
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <button onClick={() => setAktiveSuche(suchbegriff)} className="bg-green-600 text-white rounded-2xl p-3 font-semibold active:scale-[0.98] transition">
+            <button
+              onClick={() => {
+                const wert = suchfeldRef.current?.value || ""
+                setSuchbegriff(wert)
+                setAktiveSuche(wert)
+              }}
+              className="bg-green-600 text-white rounded-2xl p-3 font-semibold active:scale-[0.98] transition"
+            >
               Suchen
             </button>
             <button
               onClick={() => {
                 setSuchbegriff("")
                 setAktiveSuche("")
+                if (suchfeldRef.current) suchfeldRef.current.value = ""
               }}
               className={`rounded-2xl p-3 font-semibold ${farben.buttonSek}`}
             >
