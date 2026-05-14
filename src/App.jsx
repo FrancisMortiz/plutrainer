@@ -153,6 +153,13 @@ export default function KassentrainerApp() {
         buttonSek: "bg-neutral-200 text-neutral-950",
       }
 
+  const gefilterteArtikel = ARTIKEL.filter((artikel) => {
+    const text = `${artikel.name} ${artikel.nummer} ${artikel.kategorie}`.toLowerCase()
+    return text.includes(aktiveSuche.toLowerCase())
+  })
+
+  const stats = statistik()
+
   function quizStarten(nurFehler = false) {
     let basis = nurFehler
       ? ergebnisse.filter((e) => !e.richtig).map((e) => e.artikel)
@@ -228,63 +235,25 @@ export default function KassentrainerApp() {
     return { gesamt, richtigGesamt, falschGesamt, quote, problemArtikel }
   }
 
-  function Artikelliste() {
-    const gefiltert = ARTIKEL.filter((artikel) => {
-      const text = `${artikel.name} ${artikel.nummer} ${artikel.kategorie}`.toLowerCase()
-      return text.includes(aktiveSuche.toLowerCase())
-    })
+  const richtig = ergebnisse.filter((e) => e.richtig).length
+  const falsch = ergebnisse.filter((e) => !e.richtig).length
 
+  function Rahmen({ children }) {
     return (
-      <div className={`mt-6 rounded-3xl p-4 ${farben.flaeche2}`}>
-        <div className="flex items-center justify-between mb-4 gap-3">
-          <h3 className="font-bold text-xl">Artikelliste</h3>
-          <span className={`text-sm ${farben.textSchwach}`}>{gefiltert.length} Artikel</span>
-        </div>
-
-        <input
-          type="text"
-          placeholder="Artikel suchen..."
-          value={suchbegriff}
-          onChange={(e) => setSuchbegriff(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") setAktiveSuche(suchbegriff)
-          }}
-          className={`w-full border rounded-2xl p-4 mb-3 ${farben.feld}`}
-        />
-
-        <div className="grid grid-cols-2 gap-2 mb-4">
-          <button onClick={() => setAktiveSuche(suchbegriff)} className="bg-green-600 text-white rounded-2xl p-3 font-semibold active:scale-[0.98] transition">
-            Suchen
-          </button>
-          <button
-            onClick={() => {
-              setSuchbegriff("")
-              setAktiveSuche("")
-            }}
-            className={`rounded-2xl p-3 font-semibold ${farben.buttonSek}`}
-          >
-            Zurücksetzen
-          </button>
-        </div>
-
-        <div className="space-y-2 max-h-96 overflow-y-auto pr-1">
-          {gefiltert.map((artikel) => (
-            <div key={`${artikel.kategorie}-${artikel.name}`} className={`rounded-2xl p-4 flex items-center justify-between gap-3 ${farben.flaeche}`}>
-              <div>
-                <p className="font-semibold">{artikel.emoji} {artikel.name}</p>
-                <p className={`text-sm ${farben.textSchwach}`}>{artikel.kategorie}</p>
-              </div>
-              <div className="text-2xl font-bold tracking-wider">{artikel.nummer}</div>
-            </div>
-          ))}
+      <div className={`min-h-screen ${farben.seite} flex items-center justify-center p-4 transition-colors`}>
+        <div className={`${farben.karte} rounded-3xl p-6 w-full max-w-md transition-colors`}>
+          <div className="flex justify-end mb-4">
+            <button onClick={() => setDunkelmodus(!dunkelmodus)} className={`rounded-2xl px-4 py-2 text-sm font-semibold ${farben.buttonSek}`}>
+              {dunkelmodus ? "☀️ Hell" : "🌙 Dunkel"}
+            </button>
+          </div>
+          {children}
         </div>
       </div>
     )
   }
 
   function StatistikBox() {
-    const stats = statistik()
-
     return (
       <div className={`mt-6 rounded-3xl p-4 ${farben.flaeche2}`}>
         <div className="flex items-center justify-between mb-4">
@@ -328,24 +297,6 @@ export default function KassentrainerApp() {
     )
   }
 
-  const richtig = ergebnisse.filter((e) => e.richtig).length
-  const falsch = ergebnisse.filter((e) => !e.richtig).length
-
-  function Rahmen({ children }) {
-    return (
-      <div className={`min-h-screen ${farben.seite} flex items-center justify-center p-4 transition-colors`}>
-        <div className={`${farben.karte} rounded-3xl p-6 w-full max-w-md transition-colors`}>
-          <div className="flex justify-end mb-4">
-            <button onClick={() => setDunkelmodus(!dunkelmodus)} className={`rounded-2xl px-4 py-2 text-sm font-semibold ${farben.buttonSek}`}>
-              {dunkelmodus ? "☀️ Hell" : "🌙 Dunkel"}
-            </button>
-          </div>
-          {children}
-        </div>
-      </div>
-    )
-  }
-
   if (ansicht === "start") {
     return (
       <Rahmen>
@@ -383,7 +334,51 @@ export default function KassentrainerApp() {
         </div>
 
         <StatistikBox />
-        <Artikelliste />
+
+        <div className={`mt-6 rounded-3xl p-4 ${farben.flaeche2}`}>
+          <div className="flex items-center justify-between mb-4 gap-3">
+            <h3 className="font-bold text-xl">Artikelliste</h3>
+            <span className={`text-sm ${farben.textSchwach}`}>{gefilterteArtikel.length} Artikel</span>
+          </div>
+
+          <input
+            type="text"
+            placeholder="Artikel suchen..."
+            value={suchbegriff}
+            onChange={(e) => setSuchbegriff(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") setAktiveSuche(suchbegriff)
+            }}
+            className={`w-full border rounded-2xl p-4 mb-3 ${farben.feld}`}
+          />
+
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            <button onClick={() => setAktiveSuche(suchbegriff)} className="bg-green-600 text-white rounded-2xl p-3 font-semibold active:scale-[0.98] transition">
+              Suchen
+            </button>
+            <button
+              onClick={() => {
+                setSuchbegriff("")
+                setAktiveSuche("")
+              }}
+              className={`rounded-2xl p-3 font-semibold ${farben.buttonSek}`}
+            >
+              Zurücksetzen
+            </button>
+          </div>
+
+          <div className="space-y-2 max-h-96 overflow-y-auto pr-1">
+            {gefilterteArtikel.map((artikel) => (
+              <div key={`${artikel.kategorie}-${artikel.name}`} className={`rounded-2xl p-4 flex items-center justify-between gap-3 ${farben.flaeche}`}>
+                <div>
+                  <p className="font-semibold">{artikel.emoji} {artikel.name}</p>
+                  <p className={`text-sm ${farben.textSchwach}`}>{artikel.kategorie}</p>
+                </div>
+                <div className="text-2xl font-bold tracking-wider">{artikel.nummer}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </Rahmen>
     )
   }
