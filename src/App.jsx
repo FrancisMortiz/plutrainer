@@ -86,6 +86,8 @@ const ARTIKEL = [
   { kategorie: "Backwaren", name: "Bauernmildes", nummer: "744", emoji: "🍞" },
   { kategorie: "Backwaren", name: "Roggenkruste", nummer: "745", emoji: "🍞" },
   { kategorie: "Backwaren", name: "Weltmeisterbrot", nummer: "987", emoji: "🍞" },
+  { kategorie: "Backwaren", name: "Weltmeisterbrötchen", nummer: "992", emoji: "🥖" },
+  { kategorie: "Backwaren", name: "Ciabatta", nummer: "763", emoji: "🥖" },
 ]
 
 function mischen(liste) {
@@ -104,9 +106,7 @@ function ladeSpeicher(wert, standardWert) {
 function speichere(wert, inhalt) {
   try {
     localStorage.setItem(wert, JSON.stringify(inhalt))
-  } catch {
-    // Falls der Browser das Speichern blockiert, läuft die App trotzdem weiter.
-  }
+  } catch {}
 }
 
 export default function KassentrainerApp() {
@@ -124,6 +124,7 @@ export default function KassentrainerApp() {
   const [startzeit, setStartzeit] = useState(null)
   const [dunkelmodus, setDunkelmodus] = useState(() => ladeSpeicher("kassenTrainerDunkelmodus", true))
   const [suchbegriff, setSuchbegriff] = useState("")
+  const [aktiveSuche, setAktiveSuche] = useState("")
 
   const aktuelleFrage = fragen[index]
 
@@ -230,7 +231,7 @@ export default function KassentrainerApp() {
   function Artikelliste() {
     const gefiltert = ARTIKEL.filter((artikel) => {
       const text = `${artikel.name} ${artikel.nummer} ${artikel.kategorie}`.toLowerCase()
-      return text.includes(suchbegriff.toLowerCase())
+      return text.includes(aktiveSuche.toLowerCase())
     })
 
     return (
@@ -245,8 +246,26 @@ export default function KassentrainerApp() {
           placeholder="Artikel suchen..."
           value={suchbegriff}
           onChange={(e) => setSuchbegriff(e.target.value)}
-          className={`w-full border rounded-2xl p-4 mb-4 ${farben.feld}`}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") setAktiveSuche(suchbegriff)
+          }}
+          className={`w-full border rounded-2xl p-4 mb-3 ${farben.feld}`}
         />
+
+        <div className="grid grid-cols-2 gap-2 mb-4">
+          <button onClick={() => setAktiveSuche(suchbegriff)} className="bg-green-600 text-white rounded-2xl p-3 font-semibold active:scale-[0.98] transition">
+            Suchen
+          </button>
+          <button
+            onClick={() => {
+              setSuchbegriff("")
+              setAktiveSuche("")
+            }}
+            className={`rounded-2xl p-3 font-semibold ${farben.buttonSek}`}
+          >
+            Zurücksetzen
+          </button>
+        </div>
 
         <div className="space-y-2 max-h-96 overflow-y-auto pr-1">
           {gefiltert.map((artikel) => (
@@ -255,7 +274,6 @@ export default function KassentrainerApp() {
                 <p className="font-semibold">{artikel.emoji} {artikel.name}</p>
                 <p className={`text-sm ${farben.textSchwach}`}>{artikel.kategorie}</p>
               </div>
-
               <div className="text-2xl font-bold tracking-wider">{artikel.nummer}</div>
             </div>
           ))}
