@@ -1,6 +1,0 @@
-
-Änderungen für die nächste App-Version:
-
-- Obst/Gemüse wieder vollständig in der Artikelliste sichtbar
-- Weltmeisterbrötchen → 992
-- Ciabatta → 763
