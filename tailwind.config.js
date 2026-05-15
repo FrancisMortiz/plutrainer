@@ -1,8 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+# Kassen-Trainer
+
+Kleine private Lern-App für Artikelnummern.
+
+Netlify:
+- Build command: `npm run build`
+- Publish directory: `dist`
