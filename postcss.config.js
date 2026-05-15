@@ -1,22 +1,4 @@
-{
-  "name": "kassen-trainer",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.11",
-    "typescript": "^5.6.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.14",
-    "postcss": "^8.4.49",
-    "autoprefixer": "^10.4.20"
-  },
-  "devDependencies": {}
-}
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {} } }
