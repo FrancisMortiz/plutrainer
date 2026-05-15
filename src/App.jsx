@@ -197,6 +197,22 @@ export default function KassentrainerApp() {
     setAlleErgebnisse((alt) => [...alt, neuesErgebnis])
   }
 
+  function zahlEingeben(zahl) {
+    if (feedback) return
+    if (eingabe.length >= 4) return
+    setEingabe((alt) => `${alt}${zahl}`)
+  }
+
+  function letzteZahlLoeschen() {
+    if (feedback) return
+    setEingabe((alt) => alt.slice(0, -1))
+  }
+
+  function eingabeLeeren() {
+    if (feedback) return
+    setEingabe("")
+  }
+
   function weiter() {
     if (index + 1 >= fragen.length) {
       setAnsicht("ergebnis")
@@ -410,18 +426,44 @@ export default function KassentrainerApp() {
           <p className={`${farben.textSchwach} mt-2`}>Welche Artikelnummer?</p>
         </div>
 
-        <input
-          type="tel"
-          inputMode="numeric"
-          pattern="[0-9]*"
-          value={eingabe}
-          onChange={(e) => setEingabe(e.target.value.replace(/\D/g, ""))}
-          onKeyDown={(e) => { if (e.key === "Enter") feedback ? weiter() : pruefen() }}
-          placeholder="Nummer eingeben"
-          disabled={!!feedback}
-          autoFocus
-          className={`w-full border rounded-2xl p-5 text-center text-3xl font-bold tracking-widest ${farben.feld}`}
-        />
+        <div className={`w-full border rounded-2xl p-5 text-center text-4xl font-bold tracking-widest min-h-[86px] flex items-center justify-center ${farben.feld}`}>
+          {eingabe || <span className={farben.textSchwach}>---</span>}
+        </div>
+
+        {!feedback && (
+          <div className="mt-4 grid grid-cols-3 gap-3">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((zahl) => (
+              <button
+                key={zahl}
+                onClick={() => zahlEingeben(zahl)}
+                className={`rounded-2xl p-5 text-2xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
+              >
+                {zahl}
+              </button>
+            ))}
+
+            <button
+              onClick={eingabeLeeren}
+              className={`rounded-2xl p-5 text-xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
+            >
+              C
+            </button>
+
+            <button
+              onClick={() => zahlEingeben(0)}
+              className={`rounded-2xl p-5 text-2xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
+            >
+              0
+            </button>
+
+            <button
+              onClick={letzteZahlLoeschen}
+              className={`rounded-2xl p-5 text-xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
+            >
+              ⌫
+            </button>
+          </div>
+        )}
 
         {!feedback ? (
           <button onClick={pruefen} className="w-full mt-4 bg-green-600 text-white rounded-2xl p-4 text-lg font-semibold active:scale-[0.98] transition">
