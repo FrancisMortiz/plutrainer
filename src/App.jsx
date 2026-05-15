@@ -199,8 +199,18 @@ export default function KassentrainerApp() {
 
   function zahlEingeben(zahl) {
     if (feedback) return
-    if (eingabe.length >= 4) return
-    setEingabe((alt) => `${alt}${zahl}`)
+    setEingabe((alt) => {
+      if (alt.length >= 4) return alt
+      return `${alt}${zahl}`
+    })
+  }
+
+  function doppelteNullEingeben() {
+    if (feedback) return
+    setEingabe((alt) => {
+      if (alt.length >= 4) return alt
+      return `${alt}00`.slice(0, 4)
+    })
   }
 
   function letzteZahlLoeschen() {
@@ -432,7 +442,7 @@ export default function KassentrainerApp() {
 
         {!feedback && (
           <div className="mt-4 grid grid-cols-3 gap-3">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((zahl) => (
+            {[7, 8, 9, 4, 5, 6, 1, 2, 3].map((zahl) => (
               <button
                 key={zahl}
                 onClick={() => zahlEingeben(zahl)}
@@ -443,13 +453,6 @@ export default function KassentrainerApp() {
             ))}
 
             <button
-              onClick={eingabeLeeren}
-              className={`rounded-2xl p-5 text-xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
-            >
-              C
-            </button>
-
-            <button
               onClick={() => zahlEingeben(0)}
               className={`rounded-2xl p-5 text-2xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
             >
@@ -457,10 +460,17 @@ export default function KassentrainerApp() {
             </button>
 
             <button
+              onClick={doppelteNullEingeben}
+              className={`rounded-2xl p-5 text-2xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
+            >
+              00
+            </button>
+
+            <button
               onClick={letzteZahlLoeschen}
               className={`rounded-2xl p-5 text-xl font-bold active:scale-[0.96] transition ${farben.buttonSek}`}
             >
-              ⌫
+              Löschen
             </button>
           </div>
         )}
