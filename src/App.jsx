@@ -38,6 +38,7 @@ const ARTIKEL = [
   { kategorie: "Obst/Gemüse", name: "Wirsing", nummer: "85" },
   { kategorie: "Obst/Gemüse", name: "Zucchini", nummer: "93" },
   { kategorie: "Obst/Gemüse", name: "Zwiebeln", nummer: "95" },
+  { kategorie: "Obst/Gemüse", name: "Möhren mit Grün", nummer: "210" },
 
   { kategorie: "Backwaren", name: "Apfeltasche", nummer: "572" },
   { kategorie: "Backwaren", name: "Schoko Donut", nummer: "937" },
