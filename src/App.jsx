@@ -39,6 +39,12 @@ const ARTIKEL = [
   { kategorie: "Obst/Gemüse", name: "Zucchini", nummer: "93" },
   { kategorie: "Obst/Gemüse", name: "Zwiebeln", nummer: "95" },
   { kategorie: "Obst/Gemüse", name: "Möhren mit Grün", nummer: "210" },
+  { kategorie: "Obst/Gemüse", name: "Trauben Hell mit", nummer: "32" },
+  { kategorie: "Obst/Gemüse", name: "Trauben Hell ohne", nummer: "33" },
+  { kategorie: "Obst/Gemüse", name: "Trauben Dunkel mit", nummer: "34" },
+  { kategorie: "Obst/Gemüse", name: "Trauben Dunkel ohne", nummer: "35" },
+  { kategorie: "Obst/Gemüse", name: "Paprika rot", nummer: "66" },
+  { kategorie: "Obst/Gemüse", name: "Mango", nummer: "627" },
 
   { kategorie: "Backwaren", name: "Apfeltasche", nummer: "572" },
   { kategorie: "Backwaren", name: "Schoko Donut", nummer: "937" },
