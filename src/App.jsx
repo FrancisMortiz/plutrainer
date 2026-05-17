@@ -24,7 +24,7 @@ const ARTIKEL = [
   { kategorie: "Obst/Gemüse", name: "Gurke", nummer: "310" },
   { kategorie: "Obst/Gemüse", name: "Honigmelone", nummer: "29" },
   { kategorie: "Obst/Gemüse", name: "Kiwi", nummer: "624" },
-  { kategorie: "Obst/Gemüse", name: "Kiwi Gold", nummer: "626" },
+  { kategorie: "Obst/Gemüse", name: "Kiwi Gold", nummer: "636" },
   { kategorie: "Obst/Gemüse", name: "Kohlrabi", nummer: "202" },
   { kategorie: "Obst/Gemüse", name: "Lauchzwiebeln", nummer: "140" },
   { kategorie: "Obst/Gemüse", name: "Limette", nummer: "609" },
