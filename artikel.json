@@ -1,0 +1,517 @@
+[
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Ananas",
+    "nummer": "59"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Strauchtomaten",
+    "nummer": "97"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Apfel grün",
+    "nummer": "15"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Pink Lady",
+    "nummer": "16"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Apfel rot",
+    "nummer": "47"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Aubergine",
+    "nummer": "90"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Avocado",
+    "nummer": "621"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Baby Melone Bio",
+    "nummer": "19"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Banane",
+    "nummer": "55"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Blumenkohl",
+    "nummer": "200"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Cantaloupmelone",
+    "nummer": "21"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Chinakohl",
+    "nummer": "80"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Cherry Tomaten",
+    "nummer": "99"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Birnen",
+    "nummer": "20"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Eisbergsalat",
+    "nummer": "101"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Baby Banane",
+    "nummer": "13"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Fairtrade Banane",
+    "nummer": "45"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Feigen",
+    "nummer": "634"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Fenchel",
+    "nummer": "83"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Granatapfel",
+    "nummer": "622"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Gurke",
+    "nummer": "310"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Honigmelone",
+    "nummer": "29"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Kiwi",
+    "nummer": "624"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Kiwi Gold",
+    "nummer": "636"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Kohlrabi",
+    "nummer": "202"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Lauchzwiebeln",
+    "nummer": "140"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Limette",
+    "nummer": "609"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Porree",
+    "nummer": "222"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Radieschen",
+    "nummer": "150"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Rettich",
+    "nummer": "160"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Rotkohl",
+    "nummer": "86"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Spitzkohl",
+    "nummer": "87"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Süßkartoffeln",
+    "nummer": "25"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Weißkohl",
+    "nummer": "84"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Wirsing",
+    "nummer": "85"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Zucchini",
+    "nummer": "93"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Zwiebeln",
+    "nummer": "95"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Möhren mit Grün",
+    "nummer": "210"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Trauben Hell mit",
+    "nummer": "32"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Trauben Hell ohne",
+    "nummer": "33"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Trauben Dunkel mit",
+    "nummer": "34"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Trauben Dunkel ohne",
+    "nummer": "35"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Paprika rot",
+    "nummer": "66"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Erdbeeren",
+    "nummer": "70"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Kirschen",
+    "nummer": "75"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Kirschen im Beutel",
+    "nummer": "92"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Nektarinen im Beutel",
+    "nummer": "36"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Galiamelone",
+    "nummer": "11"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Aprikosen",
+    "nummer": "40"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Birnen rot",
+    "nummer": "17"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Nashi Birne",
+    "nummer": "519"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Bio Zitronen",
+    "nummer": "415"
+  },
+  {
+    "kategorie": "Obst/Gemüse",
+    "name": "Nektarinen lose",
+    "nummer": "41"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Apfeltasche",
+    "nummer": "572"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Schoko Donut",
+    "nummer": "937"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Pinky Donut",
+    "nummer": "951"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Spritzkuchen",
+    "nummer": "929"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Briocheknoten",
+    "nummer": "886"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Berliner",
+    "nummer": "861"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Schinken-Käse Croissant",
+    "nummer": "941"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Wienerle Croissant",
+    "nummer": "938"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Buttercroissant",
+    "nummer": "991"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Nuss Nougat Croissant",
+    "nummer": "928"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Croissant mit Kakaofüllung",
+    "nummer": "764"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Franzbrötchen",
+    "nummer": "693"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Schokobrötchen",
+    "nummer": "900"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Pizza Salami",
+    "nummer": "816"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Pizza Schinken",
+    "nummer": "969"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Hot Dog",
+    "nummer": "735"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Laugendog",
+    "nummer": "788"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Frikandel",
+    "nummer": "724"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Käseschnecke",
+    "nummer": "721"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Knusperstange Käse",
+    "nummer": "713"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Börek",
+    "nummer": "985"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Sonnenblumencrusti",
+    "nummer": "782"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Kürbiskernbrötchen",
+    "nummer": "989"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Käse Laugenstange",
+    "nummer": "934"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Käsebrezel",
+    "nummer": "718"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Laugeneck",
+    "nummer": "688"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Laugenbrötchen",
+    "nummer": "869"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Körnerglück",
+    "nummer": "803"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Doppelbrötchen Dinkel Bürli",
+    "nummer": "795"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Dinkelvollkornbrötchen",
+    "nummer": "905"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Weizenbrötchen",
+    "nummer": "918"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Bioland Steinofenbrötchen",
+    "nummer": "811"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Bioland Sauerteigkruste",
+    "nummer": "841"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Bioland Vollkoen-Körnerlaib",
+    "nummer": "730"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Bioland Vollkorn-Körner-Krusti",
+    "nummer": "715"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Walnuss-Honig-Brot",
+    "nummer": "773"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Doppelbrötchen",
+    "nummer": "794"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Fladenbrot",
+    "nummer": "965"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Kürbiskernbrot",
+    "nummer": "988"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Wurzelbrot",
+    "nummer": "868"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Sesamring",
+    "nummer": "694"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Baguette",
+    "nummer": "791"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Bauernbaguette",
+    "nummer": "813"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Dinkelbrot",
+    "nummer": "838"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Bauernkruste",
+    "nummer": "935"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Bauernmildes",
+    "nummer": "744"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Roggenkruste",
+    "nummer": "745"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Weltmeisterbrot",
+    "nummer": "987"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Weltmeisterbrötchen",
+    "nummer": "992"
+  },
+  {
+    "kategorie": "Backwaren",
+    "name": "Ciabatta",
+    "nummer": "763"
+  }
+]

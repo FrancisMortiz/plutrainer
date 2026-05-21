@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+body.dark {
+  background: #0a0a0a;
+  color: white;
+}
+
+body.light {
+  background: #f5f5f5;
+  color: #111;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+.dark .card {
+  background: #171717;
+  border: 1px solid #262626;
+}
+
+.light .card {
+  background: white;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.muted {
+  color: #8a8a8a;
+}
+
+.field, select {
+  width: 100%;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid;
+  font-size: 18px;
+}
+
+.dark .field, .dark select {
+  background: #0a0a0a;
+  color: white;
+  border-color: #404040;
+}
+
+.light .field, .light select {
+  background: white;
+  color: #111;
+  border-color: #d4d4d4;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin: 18px 0 8px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 18px;
+  padding: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+.btn-primary {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-orange {
+  background: #f97316;
+  color: white;
+}
+
+.dark .btn-secondary {
+  background: #262626;
+  color: white;
+}
+
+.light .btn-secondary {
+  background: #e5e5e5;
+  color: #111;
+}
+
+.full {
+  width: 100%;
+}
+
+.mt {
+  margin-top: 18px;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.panel {
+  border-radius: 24px;
+  padding: 16px;
+  margin-top: 22px;
+}
+
+.dark .panel {
+  background: #0a0a0a;
+  border: 1px solid #262626;
+}
+
+.light .panel {
+  background: #f5f5f5;
+}
+
+.dark .surface {
+  background: #262626;
+  color: #e5e5e5;
+}
+
+.light .surface {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.stat {
+  border-radius: 18px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 26px;
+}
+
+.green-panel {
+  background: rgba(22, 163, 74, .18);
+}
+
+.red-panel {
+  background: rgba(220, 38, 38, .18);
+}
+
+.green {
+  color: #4ade80;
+}
+
+.red {
+  color: #f87171;
+}
+
+.article-list {
+  max-height: 420px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.article-row {
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.article-name {
+  font-weight: 700;
+}
+
+.article-number {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.quiz-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.display {
+  min-height: 86px;
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+
+.keypad {
+  margin-top: 16px;
+}
+
+.key {
+  min-height: 68px;
+  font-size: 26px;
+}
+
+.feedback {
+  margin-top: 18px;
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+}
+
+.feedback-title {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.result-row {
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 8px;
+}
+
+.hidden {
+  display: none;
+}
