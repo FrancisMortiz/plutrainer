@@ -1,4 +1,15 @@
 [
+  { kategorie: "Obst/Gemüse", name: "Grapefruit", nummer: "608" },
+{ kategorie: "Obst/Gemüse", name: "Orangen", nummer: "65" },
+{ kategorie: "Obst/Gemüse", name: "Mandarinen", nummer: "63" },
+{ kategorie: "Obst/Gemüse", name: "Cocktailstrauchtomaten", nummer: "271" },
+{ kategorie: "Obst/Gemüse", name: "Rosatomaten", nummer: "46" },
+{ kategorie: "Obst/Gemüse", name: "Paprika gelb", nummer: "68" },
+{ kategorie: "Obst/Gemüse", name: "Feldgurke", nummer: "10" },
+{ kategorie: "Obst/Gemüse", name: "Mairübe", nummer: "163" },
+{ kategorie: "Obst/Gemüse", name: "Knollensellerie", nummer: "82" },
+{ kategorie: "Obst/Gemüse", name: "Ingwer", nummer: "38" },
+{ kategorie: "Obst/Gemüse", name: "Plattpfirsich", nummer: "35" },
   {
     "kategorie": "Obst/Gemüse",
     "name": "Ananas",
